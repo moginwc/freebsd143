@@ -8,6 +8,13 @@ AddToFunc   Func-TitleMouse I Raise
 +                           M Move
 +                           D Maximize
 
+# CTRLキーを押しながら
+# タイトルバーをクリック・ドラッグ・ダブルクリックした時の動作
+##DestroyFunc Func-TitleMouseCtrl
+##AddToFunc   Func-TitleMouseCtrl I Raise
+##+                               M Move
+##+                               D Maximize 0 100
+
 # アイコン化から最大表示
 DestroyFunc Func-Maximize
 AddToFunc   Func-Maximize
@@ -55,12 +62,6 @@ AddToFunc Func-LaunchOrRaise_hidemaru
 + I All  (hidemaru.exe) Raise
 + I Next (hidemaru.exe) Focus
 + I None (hidemaru.exe) Exec wine $HOME/.wine/drive_c/Program\ Files/Hidemaru/Hidemaru.exe
-
-# thunarから起動したvimを右ダブルクリックで<:><q><Enter>を送出する
-#保留#DestroyFunc RightClickFunc
-#保留#AddToFunc   RightClickFunc
-#保留#+ I Raise
-#保留#+ D Current (thunar-vim) Exec xdotool key 'colon'  key 'q' key 'Return'
 
 #----------------------------------------------------------------------
 # 2: スタイル
@@ -256,6 +257,7 @@ AddToMenu hidemaru_menu
 Mouse 1 1 A Menu Window-Ops Close
 Mouse 1 2 A Close
 Mouse 1 4 A Maximize
+##Mouse 1 4 C Maximize 0 100
 Mouse 1 6 A Iconify
 
 # デスクトップでマウスをクリックした時の動作
@@ -268,15 +270,13 @@ Mouse 3 T A Menu Window-Ops Nop
 
 # タイトルバーでマウス操作した時の動作
 Mouse 1 T A Func-TitleMouse
+##Mouse 1 T C Func-TitleMouseCtrl
 
 # 最小化されたアイコンを左クリックした場合の動作
 Mouse 1 I A Iconify
 
 # 最小化されたアイコンを右クリックした場合の動作
 Mouse 3 I A Menu Window-Ops2 Nop
-
-# thunarから起動されたvimのウインドウ内で右ダブルクリックされた場合の動作
-#保留#Mouse 3 W A Current (thunar-vim) Function RightClickFunc
 
 # ボリュームUP/DOWN/MUTEボタンの動作
 #Key XF86AudioRaiseVolume A A Exec mixer vol.volume=+0.05
