@@ -18,3 +18,4 @@ usr/local/share/ghostscript/10.04.0/Resource/Init/cidfmap
 etc/pkg/FreeBSD.conf
 usr/local/etc/pkg/repos/quarterly.conf
 etc/pf.conf
+usr/local/etc/nginx/nginx.conf
