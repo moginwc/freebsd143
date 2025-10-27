@@ -161,7 +161,7 @@ AddToMenu Programs    "プログラム"                      Title
 +                     "端末エミュレータ 80x24..."       Exec mlterm -title=端末エミュレータ
 +                     "端末エミュレータ 132x24..."      Exec mlterm -geometry 132x24 -title=端末エミュレータ
 +                     ""                                Nop
-##+                     "ファイルマネージャ..."           Exec thunar
+##+                     "ファイルマネージャ..."           Exec dbus-launch thunar
 +                     "カレンダ..."                     Exec xterm -geometry 70x38 -T カレンダ -e tcsh -c "cal -y; stty -icanon; dd bs=1 count=1"
 ##+                     "メールツール..."                 Exec sylpheed
 +                     ""                                Nop
