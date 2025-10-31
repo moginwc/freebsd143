@@ -42,20 +42,20 @@ ${top name 5}${top pid 5} ${top cpu 5} ${top mem 5}
 ${color white}MEMORY ${hr 2}
 RAM: $mem / $memmax ${alignr}$memperc%
 Swap: $swap / $swapmax ${alignr}$swapperc%
-${color #dedede}${membar 20,256}${color}
+${color dedede}${membar 20,256}${color}
 
 # ディスク表示(使用状況,ディスクアクセス状況)
 ${color white}DISK ${hr 2}
 Used: ${fs_used /} / ${fs_size /} ${alignr}${fs_used_perc /}%
-${color #dedede}${fs_bar 20,256 /}${color}
-Read: ${diskio_read} ${alignr}Write: ${diskio_write}
-${diskiograph_read 40,128 #53aa11 53aa11} ${alignr}${diskiograph_write 40,128 #9f520a 9f520a}
+${color dedede}${fs_bar 20,256 /}${color}
+Read: ${diskio_read}/s ${alignr}Write: ${diskio_write}/s
+${diskiograph_read 40,128 53aa11 53aa11} ${alignr}${diskiograph_write 40,128 9f520a 9f520a}
 
 # ネットワーク表示(IPアドレス,使用状況)
 ${color white}NETWORK ${hr 2}
 IP: ${addr em0}
-Down: ${downspeed em0} ${alignr}Up: ${upspeed em0}
-${downspeedgraph em0 40,128  #53aa11 53aa11} ${alignr}${upspeedgraph em0 40,128  #9f520a 9f520a}
+Down: ${downspeed em0}/s ${alignr}Up: ${upspeed em0}/s
+${downspeedgraph em0 40,128 53aa11 53aa11} ${alignr}${upspeedgraph em0 40,128 9f520a 9f520a}
 Total: ${totaldown em0} ${alignr}${totalup em0}
 #
 ## バッテリー表示
