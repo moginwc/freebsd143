@@ -244,6 +244,15 @@ sudo pkg install -y -q feh
 sudo pkg install -y -q tmux
 cp ./.tmux.conf ~
 
+# 13-12.自作のmanページを作成したい
+cp -r ./man ~
+
+# 8-23.(ファイルタイプ表示名の変更)
+mkdir -p ~/.local/share/mime/packages
+cp /usr/local/share/mime/packages/freedesktop.org.xml ~/.local/share/mime/packages
+sed -i '' 's/平文テキストドキュメント/テキストファイル/g' ~/.local/share/mime/packages
+update-mime-database ~/.local/share/mime
+
 # 7-3.Windowsやmacとファイル共有したい(SMB)
 sudo pkg install -y -q samba416
 sudo service samba_server enable
