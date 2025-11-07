@@ -13,7 +13,27 @@ pkg-tips \- よく使うpkgコマンドの例集
 % pkg query -e '%a = 0' '%o'
 .EE
 .TP
+pkg install後に表示されるメッセージを再表示する:
+.EX
+% pkg info -D \fIパッケージ名\fR
+.EE
+.TP
 パッケージの依存関係を表示する:
 .EX
 % pkg info -d -r \fIパッケージ名\fR
+.EE
+.TP
+パッケージを削除する:
+.EX
+% pkg delete \fIパッケージ名\fR
+.EE
+.TP
+どのパッケージからも参照されていないパッケージを削除する:
+.EX
+% pkg autoremove
+.EE
+.TP
+コマンド名から、どのパッケージに含まれるかを調べる:
+.EX
+% pkg which `which \fIパッケージ名\fR`
 .EE
