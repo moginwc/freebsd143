@@ -241,6 +241,7 @@ AddToMenu mlterm_menu
 +                     "mlterm"                          Title
 +                     "新規ウインドウ 80x24"            Exec mlterm -geometry 80x24 -title=端末エミュレータ
 +                     "新規ウインドウ 132x24"           Exec mlterm -geometry 132x24 -title=端末エミュレータ
++                     "1-2分割レイアウト tmux"          Exec mlterm -geometry 161x34 -title=端末エミュレータ -e tmux new-session \; split-window -h \; select-pane -t 1 \; split-window -v \; attach \; select-pane -t 0
 
 # ランチャー(hidemaru)右クリックメニュー
 AddToMenu hidemaru_menu
