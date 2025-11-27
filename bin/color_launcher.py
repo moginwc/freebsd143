@@ -3,10 +3,10 @@ import subprocess
 
 # コマンド設定
 COMMANDS = {
-    'blue': ['xterm', '-e', 'echo 青色が押されました.; sleep 3'],
-    'red': ['xterm', '-e', 'echo 赤色が押されました.; sleep 3'],
-    'green': ['xterm', '-e', 'echo 緑色が押されました.; sleep 3'],
-    'yellow': ['xterm', '-e', 'echo 黄色が押されました.; sleep 3'],
+    'blue':   ['xterm', '-e', 'tcsh', '-c', 'echo 青色が押されました.; sleep 3'],
+    'red':    ['xterm', '-e', 'tcsh', '-c', 'echo 赤色が押されました.; sleep 3'],
+    'green':  ['xterm', '-e', 'tcsh', '-c', 'echo 緑色が押されました.; sleep 3'],
+    'yellow': ['xterm', '-e', 'tcsh', '-c', 'echo 黄色が押されました.; sleep 3'],
 }
 
 def run_command(color):
