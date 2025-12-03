@@ -254,6 +254,10 @@ sed -i '' 's/平文テキストドキュメント/テキストファイル/g' ~/
 sed -i '' 's/平文文書/テキストファイル/g' ~/.local/share/mime/packages/freedesktop.org.xml
 update-mime-database ~/.local/share/mime
 
+# 8-10. Firefoxの初期設定を、起動せずに行いたい
+mkdir -p /usr/local/lib/firefox/distribution
+cp ./policies.json /usr/local/lib/firefox/distribution
+
 # 7-3.Windowsやmacとファイル共有したい(SMB)
 sudo pkg install -y -q samba416
 sudo service samba_server enable
