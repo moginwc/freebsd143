@@ -57,7 +57,7 @@ sudo pkg install -y -q mlterm
 cp -r ./.mlterm ~
 
 # 入力メソッド・日本語入力システムのインストールと設定 (3.初期設定 日本語入力1,2)
-sudo pkg install -y -q ja-uim-anthy uim-gtk uim-gtk3 uim-qt5
+sudo pkg install -y -q ja-uim-anthy-unicode uim-gtk2 uim-gtk3 uim-qt5 uim-qt6
 cp -r ./.xkb ~
 
 # 入力メソッド・日本語入力システムの初期設定 (3.初期設定 日本語入力3相当)
@@ -251,6 +251,7 @@ cp -r ./man ~
 mkdir -p ~/.local/share/mime/packages
 cp /usr/local/share/mime/packages/freedesktop.org.xml ~/.local/share/mime/packages
 sed -i '' 's/平文テキストドキュメント/テキストファイル/g' ~/.local/share/mime/packages
+sed -i '' 's/平文文章/テキストファイル/g' ~/.local/share/mime/packages
 update-mime-database ~/.local/share/mime
 
 # 7-3.Windowsやmacとファイル共有したい(SMB)
