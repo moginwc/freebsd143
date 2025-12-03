@@ -250,8 +250,8 @@ cp -r ./man ~
 # 8-23.(ファイルタイプ表示名の変更)
 mkdir -p ~/.local/share/mime/packages
 cp /usr/local/share/mime/packages/freedesktop.org.xml ~/.local/share/mime/packages
-sed -i '' 's/平文テキストドキュメント/テキストファイル/g' ~/.local/share/mime/packages
-sed -i '' 's/平文文章/テキストファイル/g' ~/.local/share/mime/packages
+sed -i '' 's/平文テキストドキュメント/テキストファイル/g' ~/.local/share/mime/packages/freedesktop.org.xml
+sed -i '' 's/平文文書/テキストファイル/g' ~/.local/share/mime/packages/freedesktop.org.xml
 update-mime-database ~/.local/share/mime
 
 # 7-3.Windowsやmacとファイル共有したい(SMB)
