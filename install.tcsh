@@ -11,7 +11,7 @@ sudo cp ./etc_ntp.conf /etc/ntp.conf
 sudo service powerd enable
 
 # グラフィックドライバーのインストール (3.初期設定 グラフィックドライバー)
-sudo pkg install -y -q drm-510-kmod
+sudo pkg install -y -q drm-515-kmod
 sudo sysrc kld_list+=i915kms
 sudo pw groupmod video -m pcuser
 
