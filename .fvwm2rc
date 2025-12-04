@@ -47,7 +47,7 @@ DestroyFunc Func-LaunchOrRaise_mlterm
 AddToFunc Func-LaunchOrRaise_mlterm
 + I All (mlterm) Raise
 + I Next (mlterm) Focus
-+ I None (mlterm) Exec mlterm -geometry 80x24 -title="端末エミュレータ"
++ I None (mlterm) Exec mlterm --geometry=80x24 --title="端末エミュレータ"
 
 # ランチャー(conky) 起動またはフォーカスする
 DestroyFunc Func-LaunchOrRaise_conky
@@ -158,8 +158,10 @@ AddToMenu RootMenu    "ワークスペース"                  Title
 +                     "終了..."                         Module FvwmForm QuitVerify
 
 AddToMenu Programs    "プログラム"                      Title
-+                     "端末エミュレータ 80x24..."       Exec mlterm -title=端末エミュレータ
-+                     "端末エミュレータ 132x24..."      Exec mlterm -geometry 132x24 -title=端末エミュレータ
+#+                     "端末エミュレータ 80x24..."       Exec mlterm --title=端末エミュレータ
+#+                     "端末エミュレータ 132x24..."      Exec mlterm --geometry=132x24 --title=端末エミュレータ
++                     "端末エミュレータ 80x24..."       Exec xfce4-terminal --title=端末エミュレータ
++                     "端末エミュレータ 132x24..."      Exec xfce4-terminal --geometry=132x24 --title=端末エミュレータ
 +                     ""                                Nop
 ##+                     "ファイルマネージャ..."           Exec dbus-launch thunar
 +                     "カレンダ..."                     Exec xterm -geometry 70x38 -T カレンダ -e tcsh -c "cal -y; stty -icanon; dd bs=1 count=1"
@@ -180,7 +182,7 @@ AddToMenu Programs    "プログラム"                      Title
 ##+                     ""                                Nop
 ##+                     "リモートデスクトップ接続..."     Exec xfreerdp /u:username /p:password /size:800x600 /sound /clipboard /cert-ignore /v:192.168.1.16
 ##+                     "VNCビューア..."                  Exec vncviewer
-##+                     "Telnet (シフトJIS接続)..."       Exec mlterm --km=Shift_JIS -title=Telnet\ \(シフトJIS接続\) -e telnet -8
+#+                      "Telnet (シフトJIS接続)..."       Exec mlterm --km=Shift_JIS --title=Telnet\ \(シフトJIS接続\) -e telnet -8
 +                     ""                                Nop
 +                     "ウェブブラウザ..."               Exec firefox
 ##+                     "ウェブブラウザ Firefox..."       Exec firefox
@@ -239,9 +241,16 @@ AddToMenu chromium_menu
 # ランチャー(mlterm)右クリックメニュー
 AddToMenu mlterm_menu
 +                     "mlterm"                          Title
-+                     "新規ウインドウ 80x24"            Exec mlterm -geometry 80x24 -title=端末エミュレータ
-+                     "新規ウインドウ 132x24"           Exec mlterm -geometry 132x24 -title=端末エミュレータ
-+                     "1-2分割レイアウト tmux"          Exec mlterm -geometry 161x34 -title=端末エミュレータ -e tmux new-session \; split-window -h \; select-pane -t 1 \; split-window -v \; attach \; select-pane -t 0
++                     "新規ウインドウ 80x24"            Exec mlterm --geometry=80x24 -title=端末エミュレータ
++                     "新規ウインドウ 132x24"           Exec mlterm --geometry=132x24 -title=端末エミュレータ
++                     "1-2分割レイアウト tmux"          Exec mlterm --geometry=161x34 -title=端末エミュレータ -e tmux new-session \; split-window -h \; select-pane -t 1 \; split-window -v \; attach \; select-pane -t 0
+
+# ランチャー(xfce4-terminal)右クリックメニュー
+AddToMenu xfce4terminal_menu
++                     "xfce4-terminal"               Title
++                     "新規ウインドウ 80x24"            Exec xfce4-terminal --geometry=80x24 -title=端末エミュレータ
++                     "新規ウインドウ 132x24"           Exec xfce4-terminal --geometry=132x24 -title=端末エミュレータ
++                     "1-2分割レイアウト tmux"          Exec xfce4-terminal --geometry=161x34 -title=端末エミュレータ -e tmux new-session \; split-window -h \; select-pane -t 1 \; split-window -v \; attach \; select-pane -t 0
 
 # ランチャー(hidemaru)右クリックメニュー
 AddToMenu hidemaru_menu
@@ -367,7 +376,8 @@ Style "QuitVerify" NoTitle, NoHandles, BorderWidth 5
 
 ##*FvwmButtons: (Icon "firefox.png",   Action (Mouse 1) Func-LaunchOrRaise_firefox,  Action (Mouse 3) Menu firefox_menu)
 ##*FvwmButtons: (Icon "chrome.png",    Action (Mouse 1) Func-LaunchOrRaise_chromium, Action (Mouse 3) Menu chromium_menu)
-##*FvwmButtons: (Icon "xterm-sol.png", Action (Mouse 1) Func-LaunchOrRaise_mlterm,   Action (Mouse 3) Menu mlterm_menu)
+#*FvwmButtons: (Icon "xterm-sol.png", Action (Mouse 1) Func-LaunchOrRaise_mlterm,   Action (Mouse 3) Menu mlterm_menu)
+##*FvwmButtons: (Icon "xterm-sol.png", Action (Mouse 1) Func-LaunchOrRaise_xfce4terminal, Action (Mouse 3) Menu xfce4terminal_menu)
 
 # wineサンプル
 #wine#*FvwmButtons: (Icon "hidemaru.png",  Action (Mouse 1) Func-LaunchOrRaise_hidemaru, Action (Mouse 3) Menu hidemaru_menu)
