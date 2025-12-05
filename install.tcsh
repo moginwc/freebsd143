@@ -52,9 +52,12 @@ sed -i '' 's/^##//g' ~/.xinitrc
 sed -i '' 's/^##//g' ~/.login
 sed -i '' 's/^"//g'  ~/.vimrc
 
-# 端末エミュレータのインストールと設定 (3.初期設定 端末エミュレータ)
+# 端末エミュレータのインストールと設定 (8-25. mltermを使いたい)
 sudo pkg install -y -q mlterm
 cp -r ./.mlterm ~
+
+# 端末エミュレータのインストールと設定 (3.初期設定 端末エミュレータ)
+sudo pkg install -y -q xfce4-terminal
 
 # 入力メソッド・日本語入力システムのインストールと設定 (3.初期設定 日本語入力1,2)
 sudo pkg install -y -q ja-uim-anthy-unicode uim-gtk2 uim-gtk3 uim-qt5 uim-qt6
@@ -76,7 +79,7 @@ sudo pkg install -y -q xlockmore
 sudo pkg install -y -q lupe
 sudo pkg install -y -q xpad3
 
-# xpadの初期設定、他config設定
+# xpadの初期設定、他config設定、3.初期設定 端末エミュレータ
 # 8-23.ファイル管理ソフトThunarを使いたい(.config/Thunar/uca.xml)
 # 8-23.ファイル管理ソフトThunarを使いたい(.config/gtk-3.0/bookmarks)
 # 8-23.ファイル管理ソフトThunarを使いたい(.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml)
