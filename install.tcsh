@@ -1,7 +1,7 @@
 #!/bin/tcsh
 
 # シェルスクリプト初期設定
-set ver="freebsd150"
+set ver="freebsd143"
 
 # システム起動時に ntpdが起動するよう設定する (3.初期設定 ntpd)
 sudo service ntpd enable
