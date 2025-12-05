@@ -60,7 +60,7 @@ cp -r ./.mlterm ~
 sudo pkg install -y -q xfce4-terminal
 
 # 入力メソッド・日本語入力システムのインストールと設定 (3.初期設定 日本語入力1,2)
-sudo pkg install -y -q ja-uim-anthy-unicode uim-gtk2 uim-gtk3 uim-qt5 uim-qt6
+sudo pkg install -y -q ja-uim-anthy uim-gtk2 uim-gtk3 uim-qt5 uim-qt6
 cp -r ./.xkb ~
 
 # 入力メソッド・日本語入力システムの初期設定 (3.初期設定 日本語入力3相当)
