@@ -26,7 +26,8 @@ sed -i '' 's/^"CaptionWidth"=.*/"CaptionWidth"="-270"/'                     ~/.w
 nkf -W8 -w16L -Lw ./wine-japanese.reg.txt > ./wine-japanese.reg
 regedit /s ./wine-japanese.reg
 
-# 秀丸インストール(インストーラー形式のファイルを強制的に展開してProgram Files以下にファイルコピーをしているので関連付けなどが抜けます)
+# 秀丸インストール(Wine10以降、サイレントインストールができなくなったので、
+#   インストーラー形式のファイルを強制的に展開してProgram Files以下にファイルコピーをしています。よって関連付けなどが抜けます)
 sudo pkg install -y cabextract # 秀丸のインストーラーの実態は.cabファイル
 fetch https://hide.maruo.co.jp/software/bin3/hm950_x64_signed.exe
 if ( -f ./hm950_x64_signed.exe) then
