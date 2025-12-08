@@ -13,18 +13,22 @@ sudo pkg install -y ja-font-ume
 # 共通の設定を行う
 wineserver -w # wine関係のサーバープロセスをいったん終了する
 
+# 共通の設定を行う - ウインドウの配色を設定する
+sed -i '' 's/^"ActiveTitle"=.*/"ActiveTitle"="10 36 106"/'                 ~/.wine/user.reg
+sed -i '' 's/^"GradientActiveTitle"=.*/"GradientActiveTitle"="166 202 240"/' ~/.wine/user.reg
+sed -i '' 's/^"TitleText"=.*/"TitleText"="255 255 255"/'                    ~/.wine/user.reg
+
 # 代替フォントの設定
 nkf -W8 -w16L -Lw ./wine-japanese.reg.txt > ./wine-japanese.reg
 regedit /s ./wine-japanese.reg
 
-# 秀丸インストール
+# 秀丸インストール(インストーラー形式のファイルを強制的に展開してProgram Files以下にファイルコピーをしているので関連付けなどが抜けます)
 sudo pkg install -y cabextract # 秀丸のインストーラーの実態は.cabファイル
 fetch https://hide.maruo.co.jp/software/bin3/hm950_x64_signed.exe
 if ( -f ./hm950_x64_signed.exe) then
     mkdir hidemaru
     cabextract -d ./hidemaru hm950_x64_signed.exe
-    mkdir ~/wine_bin
-    cp -r hidemaru ~/wine_bin/Hidemaru
+    cp -r hidemaru "~/.wine/drive_c/Program Files/Hidemaru"
 
     # 秀丸アイコンの抽出
     sudo pkg install -y icoutils
