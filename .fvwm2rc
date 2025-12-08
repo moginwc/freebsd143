@@ -68,7 +68,7 @@ DestroyFunc Func-LaunchOrRaise_hidemaru
 AddToFunc Func-LaunchOrRaise_hidemaru
 + I All  (hidemaru.exe) Raise
 + I Next (hidemaru.exe) Focus
-+ I None (hidemaru.exe) Exec wine $HOME/wine_bin/Hidemaru/Hidemaru.exe
++ I None (hidemaru.exe) Exec wine $HOME/.wine/drive_c/Program\ Files/Hidemaru/Hidemaru.exe
 
 #----------------------------------------------------------------------
 # 2: スタイル
