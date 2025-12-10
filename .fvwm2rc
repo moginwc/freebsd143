@@ -121,7 +121,7 @@ Style * Lenience
 # - StackTransientParent: ダイアログが親ウィンドウの上に表示されるようにする
 # - FPReleaseFocusTransient: ダイアログが閉じたらフォーカスを親に戻す
 Style * DecorateTransient
-Style "*.exe" !DecorateTransient # wineの場合は無効にする
+#wine#Style "*.exe" !DecorateTransient
 Style * StackTransientParent
 Style * FPReleaseFocusTransient
 
