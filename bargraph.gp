@@ -53,4 +53,4 @@ set boxwidth 0.5                     # 棒の太さ
 #-----------------------------------------------------------------------
 #  6. 描画
 #-----------------------------------------------------------------------
-plot "bargraph.csv" using 2:xtic(1) title "" with boxes fc rgb "#3b79c5"
+plot "bargraph.csv" using 2:xtic(1) title "" with boxes fc rgb "#6195ca"
