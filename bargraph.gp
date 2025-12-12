@@ -12,7 +12,7 @@ YMAX = int(GPVAL_Y_MAX)        # 最大Y値を取得して整数化
 #  2. PNG出力設定
 #-----------------------------------------------------------------------
 set terminal pngcairo size 640,480 font "IPAPGothic,10.5"
-set output "stripe_alpha.png"
+set output "bargraph.png"
 
 #-----------------------------------------------------------------------
 #  3. 背景ストライプ作成（偶数行だけ灰色にする）
