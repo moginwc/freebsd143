@@ -6,7 +6,7 @@ set script  = /home/pcuser/job/mainjob.tcsh
 
 while (1)
     if ( -f $eojfile ) then
-        lockf -s -t 0 $lock $script
+        lockf -s -t 0 $lock $script start
     endif
     sleep 5
 end
