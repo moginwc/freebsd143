@@ -1,4 +1,4 @@
-#!/bin/tcsh
+#!/bin/tcsh -f
 
 set eojfile = /home/pcuser/job/frontjob.end
 set lock    = /home/pcuser/job/mainjob.lock
