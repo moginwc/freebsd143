@@ -7,7 +7,7 @@ gs -q -dBATCH -dNOPAUSE -sDEVICE=pdfwrite \
    -sPAPERSIZE=a4 \
    -sOutputFile=docno.pdf - << EOF
 
-  2.834645669 2.834645669 scale %単位をmm単位にする
+  2.834645669 2.834645669 scale %単位をmmにする
   /IPAGothic-UniJIS-UTF8-H findfont 6.35 scalefont setfont
 
   10 283 moveto
