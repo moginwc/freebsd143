@@ -384,8 +384,9 @@ Style "QuitVerify" NoTitle, NoHandles, BorderWidth 5
 
 ##*FvwmButtons: (Icon "firefox.png",   Action (Mouse 1) Func-LaunchOrRaise_firefox,  Action (Mouse 3) Menu firefox_menu)
 ##*FvwmButtons: (Icon "chrome.png",    Action (Mouse 1) Func-LaunchOrRaise_chromium, Action (Mouse 3) Menu chromium_menu)
-#*FvwmButtons: (Icon "xterm-sol.png", Action (Mouse 1) Func-LaunchOrRaise_mlterm,   Action (Mouse 3) Menu mlterm_menu)
 ##*FvwmButtons: (Icon "xterm-sol.png", Action (Mouse 1) Func-LaunchOrRaise_xfce4terminal, Action (Mouse 3) Menu xfce4terminal_menu)
+
+#*FvwmButtons: (Icon "xterm-sol.png", Action (Mouse 1) Func-LaunchOrRaise_mlterm,   Action (Mouse 3) Menu mlterm_menu)
 
 # wineサンプル
 #wine#*FvwmButtons: (Icon "hidemaru.png",  Action (Mouse 1) Func-LaunchOrRaise_hidemaru, Action (Mouse 3) Menu hidemaru_menu)
