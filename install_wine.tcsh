@@ -23,7 +23,7 @@ sed -i '' 's/^"CaptionHeight"=.*/"CaptionHeight"="-270"/'                   ~/.w
 sed -i '' 's/^"CaptionWidth"=.*/"CaptionWidth"="-270"/'                     ~/.wine/user.reg
 
 # 代替フォントの設定
-pkg install -y ja-nkf
+sudo pkg install -y ja-nkf
 nkf -W8 -w16L -Lw ./wine-japanese.reg.txt > ./wine-japanese.reg
 regedit /s ./wine-japanese.reg
 
