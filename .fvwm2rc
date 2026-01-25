@@ -304,7 +304,7 @@ Mouse 3 I A Menu Window-Ops2 Nop
 #Key XF86AudioLowerVolume A A Exec mixer vol.volume=-0.05
 #Key XF86AudioMute        A A Exec mixer vol.mute=^
 
-# 音量操作
+# 音量操作(CTRL+ALT+↑で音量大、CTRL+ALT+↓で音量小、CTRL+ALT+Mでミュート/解除)
 #Key UP                   A CM Exec mixer vol.volume=+0.05
 #Key Down                 A CM Exec mixer vol.volume=-0.05
 #Key M                    A CM Exec mixer vol.mute=^
@@ -314,7 +314,7 @@ Mouse 3 I A Menu Window-Ops2 Nop
 ##Key XF86AudioLowerVolume A A Exec tcsh -c "mixer vol.volume=-0.05; volume_osd_client.tcsh"
 ##Key XF86AudioMute        A A Exec tcsh -c "mixer vol.mute=^;       volume_osd_client.tcsh mute"
 
-# 音量操作(OSD版)
+# 音量操作(OSD版)(CTRL+ALT+↑で音量大、CTRL+ALT+↓で音量小、CTRL+ALT+Mでミュート/解除)
 #Key UP                   A CM Exec tcsh -c "mixer vol.volume=+0.05; volume_osd_client.tcsh"
 #Key Down                 A CM Exec tcsh -c "mixer vol.volume=-0.05; volume_osd_client.tcsh"
 #Key M                    A CM Exec tcsh -c "mixer vol.mute=^;       volume_osd_client.tcsh mute"
