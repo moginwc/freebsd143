@@ -23,6 +23,7 @@ sed -i '' 's/^"CaptionHeight"=.*/"CaptionHeight"="-270"/'                   ~/.w
 sed -i '' 's/^"CaptionWidth"=.*/"CaptionWidth"="-270"/'                     ~/.wine/user.reg
 
 # 代替フォントの設定
+pkg install -y ja-nkf
 nkf -W8 -w16L -Lw ./wine-japanese.reg.txt > ./wine-japanese.reg
 regedit /s ./wine-japanese.reg
 
@@ -33,7 +34,7 @@ fetch https://hide.maruo.co.jp/software/bin3/hm950_x64_signed.exe
 if ( -f ./hm950_x64_signed.exe) then
     mkdir hidemaru
     cabextract -d ./hidemaru hm950_x64_signed.exe
-    cp -r hidemaru "~/.wine/drive_c/Program Files/Hidemaru"
+    cp -r hidemaru ~/.wine/drive_c/Program\ Files/Hidemaru
 
     # 秀丸アイコンの抽出
     sudo pkg install -y icoutils
