@@ -34,4 +34,16 @@ ffmpeg \
   -shortest \
   -vcodec libx264 -pix_fmt yuv420p -preset veryfast -g 60 -b:v 2500k \
   -acodec aac -b:a 128k -ar 44100 \
-  -f flv rtmp://a.rtmp.youtube.com/live2/YOUR_STREAM_KEY
+  -f flv rtmp://a.rtmp.youtube.com/live2//****-****-****-****-****
+
+ffmpeg \
+  -f v4l2 -framerate 30 -video_size 640x480 -i /dev/video0 \
+  -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 \
+  -shortest \
+  -vcodec libx264 -pix_fmt yuv420p \
+  -preset veryfast -g 60 -b:v 2500k \
+  -acodec aac -b:a 128k -ar 44100 \
+  -vf "drawtext=fontfile=/usr/local/share/fonts/ipa/ipag.otf: \
+      text='%{localtime}': fontsize=32: fontcolor=white: x=16: y=16" \
+  -f flv rtmp://a.rtmp.youtube.com/live2/****-****-****-****-****
+
