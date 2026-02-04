@@ -21,7 +21,7 @@ ffmpeg -f video4linux2 -framerate 15 -i /dev/video0 -t 00:00:30 \
   output.mp4
 
 ffmpeg \
-  -f oss -i /dev/dsp \
+  -f oss -i /dev/dsp0 \
   -f lavfi -i color=color=black:size=640x240 \
   -t 00:00:30 \
   -vf "drawtext=fontfile=/usr/local/share/fonts/ipa/ipag.otf: \
